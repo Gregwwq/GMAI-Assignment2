@@ -35,6 +35,7 @@ public class SetNearestTargetBotAsEliminationTarget : Action
         }
 
         EliminationTarget.Value = nearest;
+        done = true;
         return TaskStatus.Success;
     }
 

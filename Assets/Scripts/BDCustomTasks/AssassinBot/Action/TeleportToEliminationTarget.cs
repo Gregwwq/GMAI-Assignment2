@@ -23,6 +23,7 @@ public class TeleportToEliminationTarget : Action
         if (elap >= 0.3f)
         {
             Teleport();
+            done = true;
             return TaskStatus.Success;
         }
         else

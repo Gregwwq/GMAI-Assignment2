@@ -3,9 +3,9 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
 [TaskCategory("Assassin Bot")]
-public class PutOnDisguise : Action
+public class TurnInvisible : Action
 {
-    public SharedInt DisguiseCount;
+    public SharedInt InvisibleCount;
 
     bool done;
 
@@ -22,19 +22,19 @@ public class PutOnDisguise : Action
         disguise = transform.Find("Disguise").gameObject;
         invisible = transform.Find("Invisible").gameObject;
 
-        Debug.Log("putting on a disguise...");
+        Debug.Log("going invisible now");
     }
 
     public override TaskStatus OnUpdate()
     {
         // adding a slight delay to signify putting on of the disguise
-        if(elap >= 1f)
+        if(elap >= 0.5f)
         {
             original.SetActive(false);
-            disguise.SetActive(true);
-            invisible.SetActive(false);
+            disguise.SetActive(false);
+            invisible.SetActive(true);
 
-            DisguiseCount.Value--;
+            InvisibleCount.Value--;
 
             done = true;
             return TaskStatus.Success;
@@ -50,8 +50,8 @@ public class PutOnDisguise : Action
     {
         if (done)
         {
-            Debug.Log("disguise done");
-            Debug.Log(DisguiseCount.Value + " disguise left");
+            Debug.Log("invisibility successfully activated");
+            Debug.Log(InvisibleCount.Value + " invisibility skill charges left");
         }
     }
 }

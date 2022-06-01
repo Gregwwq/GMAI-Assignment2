@@ -35,6 +35,7 @@ public class EliminateTarget : Action
 
             EliminationTarget.Value.GetComponent<BehaviorTree>().SendEvent<object>("Die", null);
 
+            done = true;
             return TaskStatus.Success;
         }
         else

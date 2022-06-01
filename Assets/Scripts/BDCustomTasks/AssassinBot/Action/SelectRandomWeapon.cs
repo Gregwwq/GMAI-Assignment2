@@ -16,7 +16,7 @@ public class SelectRandomWeapon : Action
         elap = 0f;
         
         // getting a random choice as an integer
-        choice = Random.Range(0, 3);
+        choice = 0;//Random.Range(0, 3);
 
         Debug.Log("choosing a weapon to use");
     }
