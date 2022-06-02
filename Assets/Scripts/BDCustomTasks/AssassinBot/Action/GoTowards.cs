@@ -10,7 +10,7 @@ public class GoTowards : Action
 
     bool done;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
     }

@@ -5,15 +5,11 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class AreThereTargetBots : Conditional
 {
-    public SharedBool decoyActive, invisActive;
-
     bool done;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
-        invisActive = false;
-        decoyActive = false;
 
         Debug.Log("waiting for targets...");
     }

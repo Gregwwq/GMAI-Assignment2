@@ -5,6 +5,7 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class TurnInvisible : Action
 {
+    public SharedBool InvisActive;
     public SharedInt InvisibleCount;
 
     bool done;
@@ -15,13 +16,16 @@ public class TurnInvisible : Action
 
     public override void OnAwake()
     {
-        done = false;
-        elap = 0f;
-
         original = transform.Find("Original").gameObject;
         disguise = transform.Find("Disguise").gameObject;
         invisible = transform.Find("Invisible").gameObject;
+    }
 
+    public override void OnStart()
+    {
+        done = false;
+        elap = 0f;
+        
         Debug.Log("going invisible now");
     }
 
@@ -35,6 +39,7 @@ public class TurnInvisible : Action
             invisible.SetActive(true);
 
             InvisibleCount.Value--;
+            InvisActive.Value = true;
 
             done = true;
             return TaskStatus.Success;

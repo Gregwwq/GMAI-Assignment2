@@ -5,6 +5,7 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class RunAway : Action
 {
+    public SharedBool InvisActive;
     public SharedFloat Speed, RotateSpeed;
 
     bool done;
@@ -12,7 +13,7 @@ public class RunAway : Action
     GameObject[] targetBots;
     Vector3 centralLocation, nearest;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
 
@@ -27,6 +28,7 @@ public class RunAway : Action
         if (Vector3.Distance(transform.position, nearest) > 25f)
         {
             done = true;
+            InvisActive = false;
             return TaskStatus.Success;
         }
 

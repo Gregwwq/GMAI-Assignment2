@@ -8,13 +8,10 @@ public class WanderRandomly : Action
     public SharedFloat Speed, RotateSpeed;
     public float WanderRange;
 
-    bool done;
     Vector3 targetLocation;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
-        done = false;
-
         SetNewPosition();
     }
 
@@ -28,14 +25,6 @@ public class WanderRandomly : Action
         Move();
 
         return TaskStatus.Running;
-    }
-
-    public override void OnEnd()
-    {
-        if (done)
-        {
-
-        }
     }
 
     void Move()

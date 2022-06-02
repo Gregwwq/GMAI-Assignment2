@@ -14,10 +14,14 @@ public class AimSniper : Action
 
     public override void OnAwake()
     {
-        elap = 0f;
-
         head = transform.Find("Original").Find("Head");
         line = GetComponent<LineRenderer>();
+    }
+
+    public override void OnStart()
+    {
+        elap = 0f;
+
         line.enabled = true;
     }
 

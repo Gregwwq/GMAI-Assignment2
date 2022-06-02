@@ -11,11 +11,14 @@ public class DecoyBehavior : Action
 
     public override void OnAwake()
     {
-        done = false;
-        elap = 0f;
-
         speed = 2f;
         rotateSpeed = 200f;
+    }
+
+    public override void OnStart()
+    {
+        done = false;
+        elap = 0f;
 
         SetNewPosition();
     }

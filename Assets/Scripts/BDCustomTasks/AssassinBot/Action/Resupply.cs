@@ -15,9 +15,13 @@ public class Resupply : Action
 
     public override void OnAwake()
     {
+        resupplyStation = GameObject.Find("Resupply Station").transform;
+    }
+
+    public override void OnStart()
+    {
         done = false;
         elap = 0f;
-        resupplyStation = GameObject.Find("Resupply Station").transform;
 
         Debug.Log("going to the resupply station");
     }

@@ -15,12 +15,15 @@ public class PutOnDisguise : Action
 
     public override void OnAwake()
     {
-        done = false;
-        elap = 0f;
-
         original = transform.Find("Original").gameObject;
         disguise = transform.Find("Disguise").gameObject;
         invisible = transform.Find("Invisible").gameObject;
+    }
+
+    public override void OnStart()
+    {
+        done = false;
+        elap = 0f;
 
         Debug.Log("putting on a disguise...");
     }

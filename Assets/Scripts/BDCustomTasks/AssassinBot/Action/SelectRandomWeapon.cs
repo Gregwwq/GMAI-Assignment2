@@ -11,12 +11,12 @@ public class SelectRandomWeapon : Action
     float elap;
     int choice;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         elap = 0f;
         
         // getting a random choice as an integer
-        choice = 0;//Random.Range(0, 3);
+        choice = Random.Range(0, 3);
 
         Debug.Log("choosing a weapon to use");
     }

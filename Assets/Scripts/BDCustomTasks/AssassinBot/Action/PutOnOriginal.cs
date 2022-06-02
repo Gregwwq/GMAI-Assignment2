@@ -5,6 +5,8 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class PutOnOriginal : Action
 {
+    public SharedBool InvisActive;
+
     GameObject original, disguise, invisible;
 
     public override void OnAwake()
@@ -20,6 +22,8 @@ public class PutOnOriginal : Action
         disguise.SetActive(false);
         invisible.SetActive(false);
 
+        InvisActive.Value = false;
+        
         return TaskStatus.Success;
     }
 }

@@ -10,7 +10,7 @@ public class TeleportToEliminationTarget : Action
     bool done;
     float elap;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
         elap = 0f;

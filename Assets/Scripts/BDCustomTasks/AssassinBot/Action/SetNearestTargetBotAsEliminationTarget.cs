@@ -8,11 +8,10 @@ public class SetNearestTargetBotAsEliminationTarget : Action
     public SharedGameObject EliminationTarget;
 
     GameObject nearest;
-    float nearestDist;
 
     bool done;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
     }
@@ -21,11 +20,12 @@ public class SetNearestTargetBotAsEliminationTarget : Action
     {
         GameObject[] targetBots = GameObject.FindGameObjectsWithTag("Target");
 
+        float nearestDist = Mathf.Infinity;
+
         foreach (GameObject bot in targetBots)
         {
             // finding nearest bot
             float dist = Vector3.Distance(transform.position, bot.transform.position);
-            nearestDist = Mathf.Infinity;
 
             if (dist < nearestDist)
             {
@@ -35,6 +35,8 @@ public class SetNearestTargetBotAsEliminationTarget : Action
         }
 
         EliminationTarget.Value = nearest;
+        Debug.Log(EliminationTarget.Value);
+        Debug.Log(nearest);
         done = true;
         return TaskStatus.Success;
     }

@@ -11,13 +11,16 @@ public class Suicide : Action
 
     public override void OnAwake()
     {
-        done = false;
-
         original = transform.Find("Original").gameObject;
         disguise = transform.Find("Disguise").gameObject;
         invisible = transform.Find("Invisible").gameObject;
         dead = transform.Find("Dead").gameObject;
+    }
 
+    public override void OnStart()
+    {
+        done = false;
+        
         Debug.Log("assassin has been caught, committing suicide to protect its secrets...");
     }
 

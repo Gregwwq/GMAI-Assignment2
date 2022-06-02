@@ -9,7 +9,7 @@ public class HasSupplies : Conditional
 
     bool done;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
 

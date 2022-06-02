@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mVariableData:
     variableStartIndex: 
-    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"EliminationTarget","IsShared":true,"IsGlobal":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Caught","IsShared":true,"IsGlobal":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DecoyActive","IsShared":true,"IsGlobal":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"InvisActive","IsShared":true,"IsGlobal":true,"BooleanmValue":false}]}'
+    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"EliminationTarget","IsShared":true,"IsGlobal":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Caught","IsShared":true,"IsGlobal":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"InvisActive","IsShared":true,"IsGlobal":true,"BooleanmValue":false}]}'
     fieldSerializationData:
       typeName: []
       fieldNameHash: 
       startIndex: 
       dataPosition: 
-      unityObjects:
-      - {fileID: 0}
+      unityObjects: []
       byteData: 
       byteDataArray: 
   mVersion: 1.6.8

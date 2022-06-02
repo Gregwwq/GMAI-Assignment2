@@ -10,7 +10,7 @@ public class GoTowardsTargetBots : Action
     bool done;
     Vector3 targetLocation;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
 

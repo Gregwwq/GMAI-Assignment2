@@ -16,11 +16,14 @@ public class DeployDecoys : Action
 
     public override void OnAwake()
     {
+        decoyPrefab = (GameObject) Resources.Load("Prefabs/Decoy", typeof(GameObject));        
+    }
+
+    public override void OnStart()
+    {
         done = false;
         elap = 0f;
         numOfDecoys = 0;
-
-        decoyPrefab = (GameObject) Resources.Load("Prefabs/Decoy", typeof(GameObject));
 
         Debug.Log("deploying 6 decoys");
     }
@@ -29,6 +32,7 @@ public class DeployDecoys : Action
     {
         if (numOfDecoys >= 6)
         {
+            DecoyCount.Value--;
             return TaskStatus.Success;
         }
         

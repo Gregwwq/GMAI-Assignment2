@@ -12,7 +12,7 @@ public class EliminateTarget : Action
     bool done;
     float elap;
 
-    public override void OnAwake()
+    public override void OnStart()
     {
         done = false;
         elap = 0f;
@@ -33,7 +33,7 @@ public class EliminateTarget : Action
                 Debug.Log(SniperBullets.Value + " sniper bullets left");
             }
 
-            EliminationTarget.Value.GetComponent<BehaviorTree>().SendEvent<object>("Die", null);
+            EliminationTarget.Value.GetComponent<BehaviorTree>().SetVariable("Alive", (SharedBool)false);
 
             done = true;
             return TaskStatus.Success;

@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Target Bot")]
 public class Die : Action
 {
-    public SharedBool Alive;
-
     public override TaskStatus OnUpdate()
     {
         // getting a random direction to topple, left or right
@@ -27,7 +25,6 @@ public class Die : Action
         transform.position = new Vector3(transform.position.x, 0.4f, transform.position.z);
 
         gameObject.tag = "DeadTarget";
-        Alive.Value = false;
 
         return TaskStatus.Success;
     }
