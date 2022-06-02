@@ -5,6 +5,7 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class DeployDecoys : Action
 {
+    public SharedBool DecoyActive;
     public SharedInt DecoyCount;
 
     bool done;
@@ -33,6 +34,7 @@ public class DeployDecoys : Action
         if (numOfDecoys >= 6)
         {
             DecoyCount.Value--;
+            DecoyActive.Value = true;
             return TaskStatus.Success;
         }
         

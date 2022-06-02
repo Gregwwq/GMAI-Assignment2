@@ -5,18 +5,11 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Target Bot")]
 public class ChaseNearestDecoy : Action
 {
-    public SharedBool Chasing;
+    public SharedBool Chasing, DecoyActive;
     public SharedFloat Speed, RotateSpeed;
-
-    bool done;
 
     GameObject[] decoys;
     Transform nearest;
-
-    public override void OnStart()
-    {
-        done = false;
-    }
 
     public override TaskStatus OnUpdate()
     {
@@ -24,7 +17,8 @@ public class ChaseNearestDecoy : Action
 
         if (decoys.Length < 1)
         {
-            return TaskStatus.Success;
+            DecoyActive.Value = false;
+            Chasing.Value = false;
         }
 
         FindNearestDecoy();
@@ -47,14 +41,6 @@ public class ChaseNearestDecoy : Action
                 nearest = decoy.transform;
                 nearestDist = dist;
             }
-        }
-    }
-
-    public override void OnEnd()
-    {
-        if (done)
-        {
-            Chasing.Value = false;
         }
     }
 

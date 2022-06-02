@@ -5,6 +5,9 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class Suicide : Action
 {
+    public SharedGameObject EliminationTarget;
+    public SharedBool InvisActive, DecoyActive;
+
     bool done;
 
     GameObject original, disguise, invisible, dead;
@@ -31,6 +34,9 @@ public class Suicide : Action
         invisible.SetActive(false);
         dead.SetActive(true);
 
+        EliminationTarget.Value = null;
+        InvisActive.Value = false;
+        DecoyActive.Value = false;
         done = true;
         return TaskStatus.Success;
     }

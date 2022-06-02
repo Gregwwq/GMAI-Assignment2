@@ -5,7 +5,7 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Assassin Bot")]
 public class RunAway : Action
 {
-    public SharedBool InvisActive;
+    public SharedBool InvisActive, DecoyActive;
     public SharedFloat Speed, RotateSpeed;
 
     bool done;
@@ -25,7 +25,7 @@ public class RunAway : Action
         targetBots = GameObject.FindGameObjectsWithTag("Target");
 
         FindNearestTarget();
-        if (Vector3.Distance(transform.position, nearest) > 25f)
+        if (Vector3.Distance(transform.position, nearest) > 25f && !DecoyActive.Value)
         {
             done = true;
             InvisActive = false;
